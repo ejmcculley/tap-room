@@ -22,7 +22,7 @@ _Build a tap room in React where a bar can track their kegs. Users should be abl
 
 ## Tap Room Component Tree
 
-<img src="src/Images/component-tree.png" alt="diagram of react components for tap room" style="float: center; />
+<img width="1273" alt="component-tree" src="https://user-images.githubusercontent.com/92233564/172030733-07467409-4616-4ec2-b5e5-c237fbd5383a.png">
 
 ## Setup/Installation Requirements
 
