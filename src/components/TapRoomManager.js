@@ -3,15 +3,37 @@ import NewKegForm from "./NewKegForm";
 import KegList from "./KegList";
 import KegDetail from "./KegDetail";
 import EditKegForm from "./EditKegForm";
-import PropTypes from "prop-types";
-
 
 class TapRoomManager extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       formVisibleOnPage: false,
-      mainKegList: [],
+      mainKegList: [
+        {
+          name: "Lazio Lightning",
+          brand: "Coastal Cruz",
+          price: "14",
+          abv: "13.5",
+          glassCount: "397",
+          id: "1"
+        }, 
+        {
+          name: "Summer Crush",
+          brand: "Bros of Beauj",
+          price: "15",
+          abv: "11.0",
+          glassCount: "397",
+          id: "2"
+        }, 
+        {
+          name: "Bubbles What",
+          brand: "Message in a Bottle",
+          price: "11",
+          abv: "12.2",
+          glassCount: "397",
+          id: "3"
+        }],
       selectedKeg: null,
       editing: false
     };
@@ -27,7 +49,7 @@ class TapRoomManager extends React.Component {
   }
 
   handleEditClick = () => {
-    this.state({editing: true});
+    this.setState({editing: true});
   }
 
   handleDeletingKeg = (id) => {
@@ -64,33 +86,33 @@ class TapRoomManager extends React.Component {
   }
 
   render() {
-    let currentVisibleState = null;
+    let currentlyVisibleState = null;
     let buttonText = null;
 
     if (this.state.editing) {
-      currentVisibleState = <EditKegForm keg = {this.state.selectedKeg} onEditKeg = {this.handleEditingKegInList} />
+      currentlyVisibleState = <EditKegForm keg = {this.state.selectedKeg} onEditKeg = {this.handleEditingKegInList} />
       buttonText = "Back";
     } else if (this.state.selectedKeg != null) {
-        currentVisibleState = 
+        currentlyVisibleState = 
           <KegDetail
             keg = {this.state.selectedKeg}
             onClickingDelete = {this.handleDeletingKeg}
             onClickingEdit = {this.handleEditClick} />
         buttonText = "Back";
     } else if (this.state.formVisibleOnPage) {
-        currentVisibleState = <NewKegForm onNewKegCreation={this.handleAddingNewKegToList} />
+        currentlyVisibleState = <NewKegForm onNewKegCreation={this.handleAddingNewKegToList} />
         buttonText = "Back";
       } else {
-          currentVisibleState = <KegList kegList={this.state.mainKegList} onKegSelection={this.handleChangingSelectedKeg} />
+          currentlyVisibleState = <KegList kegList={this.state.mainKegList} onKegSelection={this.handleChangingSelectedKeg} />
           buttonText = "Add Keg";
       }
     return (
       <>
-        {currentVisibleState}
+        {currentlyVisibleState}
         <button onClick={this.handleClick}>{buttonText}</button>
       </>
     );
   }
 }
 
-export default TapRoomManager.js;
+export default TapRoomManager;
