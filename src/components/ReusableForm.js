@@ -1,7 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const ReusableForm = (props) => {
+
+function ReusableForm(props) {
   return (
     <>
       <form onSubmit={props.formSubmissionHandler}>
@@ -21,10 +22,10 @@ const ReusableForm = (props) => {
           type="text"
           name="abv"
           placeholder="ABV" />
-          <input
+        {/* <input
           type="text"
-          name="pintCount"
-          placeholder="Number of Pints" />
+          name="glassCount"
+          placeholder="Number of glasss" /> */}
         <button type="submit">{props.buttonText}</button>
       </form>
     </>

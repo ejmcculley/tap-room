@@ -1,16 +1,20 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const KegDetail = ({ keg, onClickingDelete }) => (
-  <>
-    <h1>{props.name}</h1>
-    <h2>{props.brand}</h2>
-    <h3>$ {props.price} / pint | ABV: {props.abv} %</h3>
-    <h3>{props.pintCount} / 124 pints left in keg</h3>
-    <button onClick={ props.onClickingEdit }>Update</button>
-    <button onClick={() => onClickingDelete(keg.id) }>Remove</button>
-  </>
-);
+function KegDetail(props) {
+  const { keg, onClickingDelete } = props;
+
+  return (
+    <>
+      <h1>{props.keg.name}</h1>
+      <h2>{props.keg.brand}</h2>
+      <h3>$ {props.keg.price} / glass | ABV: {props.keg.abv} %</h3>
+      <h3>{props.keg.glassCount} / 397 glasss left in keg</h3>
+      <button onClick={ props.onClickingEdit }>Update</button>
+      <button onClick={() => onClickingDelete(keg.id) }>Remove</button>
+    </>
+  );
+}
 
 KegDetail.propTypes = {
   keg: PropTypes.object,

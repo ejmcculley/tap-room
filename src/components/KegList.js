@@ -1,25 +1,23 @@
 import React from "react";
 import Keg from "./Keg";
-import { v4 } from 'uuid';
 import PropTypes from "prop-types";
 
-const keg = {};
-keg.id = v4();
-
-const KegList = (props) => {
-  (
+function KegList(props) {
+  return (
     <>
-      {props.kegList.map ((keg) =>
-        <Keg  
-          whenKegClick = { props.onKegSelection }
-          name = { keg.name }
-          brand = { keg.brand }
-          price = { keg.price}
-          abv = { keg.abv }
-          pintCount = { keg.pintCount }
-          id = { keg.id }
-          key = { keg.id } />
-          )}
+      {props.kegList.map((keg) =>
+        <div className="container" key={keg}>
+          <Keg  
+            whenKegClicked = { props.onKegSelection }
+            name={keg.name}
+            brand={keg.brand}
+            price={keg.price}
+            abv={keg.abv}
+            glassCount={keg.glassCount || 397}
+            id={keg.id}
+            key={keg.id} />
+        </div>
+        )}
     </>
   );
 }

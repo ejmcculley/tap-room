@@ -4,23 +4,23 @@ import ReusableForm from "./ReusableForm";
 
 
 
-const EditKegForm = (props) => {
+function EditKegForm (props) {
   const { keg } = props;
 
-  const handleEditKegFormSubmission = (event) => {
+  function handleEditKegFormSubmission(event) {
     event.preventDefault();
     props.onEditKeg({ name: event.target.name.value,
                       brand: event.target.brand.value,
                       price: event.target.price.value,
                       abv: event.target.abv.value,
-                      pintCount: event.target.pintCount.value,
                       id: keg.id });
   }
 
   return (
     <>
       <ReusableForm
-        buttonText="Update Ticket" />
+        formSubmissionHandler={handleEditKegFormSubmission}
+        buttonText="Update Keg" />
     </>
   );
 }
