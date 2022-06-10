@@ -9,7 +9,6 @@ function KegDetail(props) {
       <h1>{props.keg.name}</h1>
       <h2>{props.keg.brand}</h2>
       <h3>$ {props.keg.price} / glass | ABV: {props.keg.abv} %</h3>
-      <h3>{props.keg.glassCount} / 397 glasss left in keg</h3>
       <button onClick={ props.onClickingEdit }>Update</button>
       <button onClick={() => onClickingDelete(keg.id) }>Remove</button>
     </>
