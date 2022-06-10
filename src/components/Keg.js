@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 function Keg(props) {
 
-  const [state, setState] = useState({ count: 15 })
+  const [state, setState] = useState({ count: 397 })
   const count = state.count
 
   function decrementCount() {
