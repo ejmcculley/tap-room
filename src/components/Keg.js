@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import { Button } from "./styles/Button.styled"
+import { StyledCard } from "./styles/Card.styled";
 
 function Keg(props) {
 
@@ -15,19 +17,22 @@ function Keg(props) {
         }
   })
   }
-
+ 
   return (
   <>
-    <div >
-      <h1>{props.name}</h1>
-      <h2>{props.brand}</h2>
-      <h3>$ {props.price} / glass | ABV: {props.abv} %</h3>
-      <h3>{ count } / {props.glassCount} glasses left in keg</h3>
-      <div className="kegButtons">
-        <button onClick={decrementCount}>+ Sell Glass</button>
-        <button onClick = {() => props.whenKegClicked(props.id)}>View</button>
+    <StyledCard>
+      <div>
+        <h1>{props.name}</h1>
+        <h2>{props.brand}</h2>
+        <h3>$ {props.price} / glass | ABV: {props.abv} %</h3>
+        <h3>{ count } / {props.glassCount} glasses left in keg</h3>
+          
+          <div className="kegButtons">
+              <Button onClick={decrementCount}>+ Sell Glass</Button>
+              <Button onClick = {() => props.whenKegClicked(props.id)}>View</Button>
+          </div>
       </div>
-    </div>
+    </StyledCard>
   </>
   );
 }

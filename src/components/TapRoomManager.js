@@ -3,6 +3,7 @@ import NewKegForm from "./NewKegForm";
 import KegList from "./KegList";
 import KegDetail from "./KegDetail";
 import EditKegForm from "./EditKegForm";
+import { Button } from "./styles/Button.styled";
 
 class TapRoomManager extends React.Component {
   constructor(props) {
@@ -109,7 +110,7 @@ class TapRoomManager extends React.Component {
     return (
       <>
         {currentlyVisibleState}
-        <button onClick={this.handleClick}>{buttonText}</button>
+        <Button onClick={this.handleClick}>{buttonText}</Button>
       </>
     );
   }
