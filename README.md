@@ -12,6 +12,7 @@
 * Webpack
 * HTML
 * CSS
+* Styled-components
 * _Markdown_
 * _Git / Github_
 * _Terminal_
@@ -20,8 +21,9 @@
 
 _Build a tap room in React where a bar can track their kegs. Users should be able to see a list of available kegs, add new kegs, see details for each keg, track and order pints._
 
-## Tap Room Component Tree
+<img width="1273" alt="Screen Shot 2022-06-11 at 4 42 28 PM" src="https://user-images.githubusercontent.com/92233564/173208400-155b9cbc-eae1-4e42-af4e-67dd1e02313b.png">
 
+## Tap Room Component Tree
 
 <img width="1273" alt="component-tree" src="https://user-images.githubusercontent.com/92233564/172030733-07467409-4616-4ec2-b5e5-c237fbd5383a.png">
 
